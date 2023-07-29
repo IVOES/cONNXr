@@ -1,0 +1,398 @@
+protobuf/protobuf-c.c:2563:14: style: Condition '*pstr!=NULL' is always true [knownConditionTrueFalse]
+   if (*pstr != NULL && *pstr != def)
+             ^
+protobuf/protobuf-c.c:2561:28: note: Assuming that condition '*pstr!=NULL' is not redundant
+  if (maybe_clear && *pstr != NULL) {
+                           ^
+protobuf/protobuf-c.c:2563:14: note: Condition '*pstr!=NULL' is always true
+   if (*pstr != NULL && *pstr != def)
+             ^
+protobuf/protobuf-c.c:818:19: portability: Shifting a negative value is technically undefined behaviour [shiftNegativeLHS]
+  out[1] = (value >> 7) | 0x80;
+                  ^
+protobuf/protobuf-c.c:819:19: portability: Shifting a negative value is technically undefined behaviour [shiftNegativeLHS]
+  out[2] = (value >> 14) | 0x80;
+                  ^
+protobuf/protobuf-c.c:820:19: portability: Shifting a negative value is technically undefined behaviour [shiftNegativeLHS]
+  out[3] = (value >> 21) | 0x80;
+                  ^
+protobuf/protobuf-c.c:821:19: portability: Shifting a negative value is technically undefined behaviour [shiftNegativeLHS]
+  out[4] = (value >> 28) | 0x80;
+                  ^
+protobuf/protobuf-c.c:3025:61: style:inconclusive: Function 'protobuf_c_message_unpack' argument 1 names different: declaration 'descriptor' definition 'desc'. [funcArgNamesDifferent]
+protobuf_c_message_unpack(const ProtobufCMessageDescriptor *desc,
+                                                            ^
+protobuf/protobuf-c.h:956:36: note: Function 'protobuf_c_message_unpack' argument 1 names different: declaration 'descriptor' definition 'desc'.
+ const ProtobufCMessageDescriptor *descriptor,
+                                   ^
+protobuf/protobuf-c.c:3025:61: note: Function 'protobuf_c_message_unpack' argument 1 names different: declaration 'descriptor' definition 'desc'.
+protobuf_c_message_unpack(const ProtobufCMessageDescriptor *desc,
+                                                            ^
+protobuf/protobuf-c.c:3540:9: warning: Size of pointer 'service' used instead of size of its data. [pointerSize]
+ memset(service + 1, 0, descriptor->n_methods * sizeof(GenericHandler));
+        ^
+protobuf/protobuf-c.c:1893:7: style: Variable 'rv' is assigned a value that is never used. [unreadVariable]
+   rv += len;
+      ^
+src/connxr.c:38:27: warning:inconclusive: Either the condition 'inp0set0!=NULL' is redundant or there is possible null pointer dereference: inp0set0. [nullPointerRedundantCheck]
+  printf("values = %d\n", inp0set0->data_type);
+                          ^
+src/connxr.c:31:16: note: Assuming that condition 'inp0set0!=NULL' is not redundant
+  if (inp0set0 != NULL){printf("ok!\n");}
+               ^
+src/connxr.c:38:27: note: Null pointer dereference
+  printf("values = %d\n", inp0set0->data_type);
+                          ^
+src/connxr.c:40:3: warning:inconclusive: Either the condition 'inp0set0!=NULL' is redundant or there is possible null pointer dereference: inp0set0. [nullPointerRedundantCheck]
+  inp0set0->name = model->graph->input[0]->name;
+  ^
+src/connxr.c:31:16: note: Assuming that condition 'inp0set0!=NULL' is not redundant
+  if (inp0set0 != NULL){printf("ok!\n");}
+               ^
+src/connxr.c:40:3: note: Null pointer dereference
+  inp0set0->name = model->graph->input[0]->name;
+  ^
+src/connxr.c:40:20: warning:inconclusive: Either the condition 'model!=NULL' is redundant or there is possible null pointer dereference: model. [nullPointerRedundantCheck]
+  inp0set0->name = model->graph->input[0]->name;
+                   ^
+src/connxr.c:26:13: note: Assuming that condition 'model!=NULL' is not redundant
+  if (model != NULL){printf("ok!\n");}
+            ^
+src/connxr.c:40:20: note: Null pointer dereference
+  inp0set0->name = model->graph->input[0]->name;
+                   ^
+src/connxr.c:48:48: warning:inconclusive: Either the condition 'model!=NULL' is redundant or there is possible null pointer dereference: model. [nullPointerRedundantCheck]
+  printf("Running inference on %s model...\n", model->graph->name);
+                                               ^
+src/connxr.c:26:13: note: Assuming that condition 'model!=NULL' is not redundant
+  if (model != NULL){printf("ok!\n");}
+            ^
+src/connxr.c:48:48: note: Null pointer dereference
+  printf("Running inference on %s model...\n", model->graph->name);
+                                               ^
+src/operators/ai.onnx/Conv/11/execute_operator__ai_onnx__conv__11__T_tensor_float.c:72:22: style: Variable 'd_kernel' is assigned a value that is never used. [unreadVariable]
+    int64_t d_kernel = kernel_shape[2];
+                     ^
+src/operators/ai.onnx/Conv/11/operator__ai_onnx__conv__11__T_tensor_float.c:55:153: warning: Either the condition 't_B!=NULL' is redundant or there is possible null pointer dereference: t_B. [nullPointerRedundantCheck]
+  TRACE_FATAL(0, t_B && t_B->n_dims != 1 && t_B->dims[0] != M, "Mismatch of supplied bias size (%" PRId64 ") and number of feature maps (%" PRId64 ")", t_B->n_float_data, M);
+                                                                                                                                                        ^
+src/operators/ai.onnx/Conv/11/operator__ai_onnx__conv__11__T_tensor_float.c:263:21: note: Assuming that condition 't_B!=NULL' is not redundant
+            if (t_B != NULL){
+                    ^
+src/operators/ai.onnx/Conv/11/operator__ai_onnx__conv__11__T_tensor_float.c:55:153: note: Null pointer dereference
+  TRACE_FATAL(0, t_B && t_B->n_dims != 1 && t_B->dims[0] != M, "Mismatch of supplied bias size (%" PRId64 ") and number of feature maps (%" PRId64 ")", t_B->n_float_data, M);
+                                                                                                                                                        ^
+src/operators/ai.onnx/Conv/11/operator__ai_onnx__conv__11__T_tensor_float.c:104:189: warning: Either the condition 'a_pads' is redundant or there is possible null pointer dereference: a_pads. [nullPointerRedundantCheck]
+  TRACE_WARN(0, a_pads && a_pads->n_ints != 2*n_pads, "dimension mismatch of provided paddings (%zu) and needed (%" PRId64 "), ignoring excess, applying auto_pad or filling with zeroes!", a_pads->n_ints, 2*n_pads);
+                                                                                                                                                                                            ^
+src/operators/ai.onnx/Conv/11/operator__ai_onnx__conv__11__T_tensor_float.c:106:9: note: Assuming that condition 'a_pads' is not redundant
+    if (a_pads && i < a_pads->n_ints/2) {
+        ^
+src/operators/ai.onnx/Conv/11/operator__ai_onnx__conv__11__T_tensor_float.c:104:189: note: Null pointer dereference
+  TRACE_WARN(0, a_pads && a_pads->n_ints != 2*n_pads, "dimension mismatch of provided paddings (%zu) and needed (%" PRId64 "), ignoring excess, applying auto_pad or filling with zeroes!", a_pads->n_ints, 2*n_pads);
+                                                                                                                                                                                            ^
+src/operators/ai.onnx/Conv/11/operator__ai_onnx__conv__11__T_tensor_float.c:190:22: style: Variable 'd_kernel' is assigned a value that is never used. [unreadVariable]
+    int64_t d_kernel = kernel[2];
+                     ^
+src/operators/ai.onnx/MaxPool/12/prepare_operator__ai_onnx__maxpool__12.c:48:12: style: Same expression used in consecutive assignments of 'default_n_pads' and 'default_n_strides'. [duplicateAssignExpression]
+    size_t default_n_pads = i_X->n_dims-2;
+           ^
+src/operators/ai.onnx/MaxPool/12/prepare_operator__ai_onnx__maxpool__12.c:52:12: note: Same expression used in consecutive assignments of 'default_n_pads' and 'default_n_strides'.
+    size_t default_n_strides = i_X->n_dims-2;
+           ^
+src/operators/ai.onnx/MaxPool/12/prepare_operator__ai_onnx__maxpool__12.c:48:12: note: Same expression used in consecutive assignments of 'default_n_pads' and 'default_n_strides'.
+    size_t default_n_pads = i_X->n_dims-2;
+           ^
+src/trace.c:28:0: style: The function 'Debug_PrintArray' is never used. [unusedFunction]
+
+^
+src/trace.c:128:0: style: The function 'debug_prettyprint_tensorproto' is never used. [unusedFunction]
+
+^
+src/trace.c:120:0: style: The function 'debug_print_dims' is never used. [unusedFunction]
+
+^
+src/utils.c:425:0: style: The function 'exportTensorProtoFile' is never used. [unusedFunction]
+
+^
+src/utils.c:601:0: style: The function 'freeTensorData' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Add/7/free_operator__ai_onnx__add__7.c:7:0: style: The function 'free_operator__ai_onnx__add__7' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/ArgMax/12/free_operator__ai_onnx__argmax__12.c:7:0: style: The function 'free_operator__ai_onnx__argmax__12' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/BatchNormalization/9/free_operator__ai_onnx__batchnormalization__9.c:7:0: style: The function 'free_operator__ai_onnx__batchnormalization__9' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Clip/12/free_operator__ai_onnx__clip__12.c:7:0: style: The function 'free_operator__ai_onnx__clip__12' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Constant/12/free_operator__ai_onnx__constant__12.c:7:0: style: The function 'free_operator__ai_onnx__constant__12' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Conv/11/free_operator__ai_onnx__conv__11.c:7:0: style: The function 'free_operator__ai_onnx__conv__11' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/ConvTranspose/11/free_operator__ai_onnx__convtranspose__11.c:7:0: style: The function 'free_operator__ai_onnx__convtranspose__11' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Elu/6/free_operator__ai_onnx__elu__6.c:7:0: style: The function 'free_operator__ai_onnx__elu__6' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/GlobalAveragePool/1/free_operator__ai_onnx__globalaveragepool__1.c:7:0: style: The function 'free_operator__ai_onnx__globalaveragepool__1' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Identity/1/free_operator__ai_onnx__identity__1.c:7:0: style: The function 'free_operator__ai_onnx__identity__1' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/LeakyRelu/6/free_operator__ai_onnx__leakyrelu__6.c:7:0: style: The function 'free_operator__ai_onnx__leakyrelu__6' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/MatMul/9/free_operator__ai_onnx__matmul__9.c:7:0: style: The function 'free_operator__ai_onnx__matmul__9' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/MaxPool/12/free_operator__ai_onnx__maxpool__12.c:7:0: style: The function 'free_operator__ai_onnx__maxpool__12' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Mul/7/free_operator__ai_onnx__mul__7.c:7:0: style: The function 'free_operator__ai_onnx__mul__7' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Relu/6/free_operator__ai_onnx__relu__6.c:7:0: style: The function 'free_operator__ai_onnx__relu__6' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Reshape/5/free_operator__ai_onnx__reshape__5.c:7:0: style: The function 'free_operator__ai_onnx__reshape__5' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Sigmoid/6/free_operator__ai_onnx__sigmoid__6.c:7:0: style: The function 'free_operator__ai_onnx__sigmoid__6' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Softmax/11/free_operator__ai_onnx__softmax__11.c:7:0: style: The function 'free_operator__ai_onnx__softmax__11' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Transpose/1/free_operator__ai_onnx__transpose__1.c:7:0: style: The function 'free_operator__ai_onnx__transpose__1' is never used. [unusedFunction]
+
+^
+src/utils.c:299:0: style: The function 'mallocTensorProto' is never used. [unusedFunction]
+
+^
+src/utils.c:477:0: style: The function 'memdup' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:46:0: style: The function 'onnx__attribute_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:16:0: style: The function 'onnx__attribute_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:22:0: style: The function 'onnx__attribute_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:29:0: style: The function 'onnx__attribute_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:37:0: style: The function 'onnx__attribute_proto__unpack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:316:0: style: The function 'onnx__graph_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:286:0: style: The function 'onnx__graph_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:292:0: style: The function 'onnx__graph_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:299:0: style: The function 'onnx__graph_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:307:0: style: The function 'onnx__graph_proto__unpack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:181:0: style: The function 'onnx__model_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:151:0: style: The function 'onnx__model_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:157:0: style: The function 'onnx__model_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:164:0: style: The function 'onnx__model_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:136:0: style: The function 'onnx__node_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:106:0: style: The function 'onnx__node_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:112:0: style: The function 'onnx__node_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:119:0: style: The function 'onnx__node_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:127:0: style: The function 'onnx__node_proto__unpack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:571:0: style: The function 'onnx__operator_set_id_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:541:0: style: The function 'onnx__operator_set_id_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:547:0: style: The function 'onnx__operator_set_id_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:554:0: style: The function 'onnx__operator_set_id_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:562:0: style: The function 'onnx__operator_set_id_proto__unpack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:412:0: style: The function 'onnx__sparse_tensor_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:382:0: style: The function 'onnx__sparse_tensor_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:388:0: style: The function 'onnx__sparse_tensor_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:395:0: style: The function 'onnx__sparse_tensor_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:403:0: style: The function 'onnx__sparse_tensor_proto__unpack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:226:0: style: The function 'onnx__string_string_entry_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:196:0: style: The function 'onnx__string_string_entry_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:202:0: style: The function 'onnx__string_string_entry_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:209:0: style: The function 'onnx__string_string_entry_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:217:0: style: The function 'onnx__string_string_entry_proto__unpack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:271:0: style: The function 'onnx__tensor_annotation__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:241:0: style: The function 'onnx__tensor_annotation__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:247:0: style: The function 'onnx__tensor_annotation__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:254:0: style: The function 'onnx__tensor_annotation__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:262:0: style: The function 'onnx__tensor_annotation__unpack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:367:0: style: The function 'onnx__tensor_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:337:0: style: The function 'onnx__tensor_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:343:0: style: The function 'onnx__tensor_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:463:0: style: The function 'onnx__tensor_shape_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:433:0: style: The function 'onnx__tensor_shape_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:439:0: style: The function 'onnx__tensor_shape_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:446:0: style: The function 'onnx__tensor_shape_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:454:0: style: The function 'onnx__tensor_shape_proto__unpack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:526:0: style: The function 'onnx__type_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:496:0: style: The function 'onnx__type_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:502:0: style: The function 'onnx__type_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:509:0: style: The function 'onnx__type_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:517:0: style: The function 'onnx__type_proto__unpack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:91:0: style: The function 'onnx__value_info_proto__free_unpacked' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:61:0: style: The function 'onnx__value_info_proto__get_packed_size' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:67:0: style: The function 'onnx__value_info_proto__pack' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:74:0: style: The function 'onnx__value_info_proto__pack_to_buffer' is never used. [unusedFunction]
+
+^
+protobuf/onnx.pb-c.c:82:0: style: The function 'onnx__value_info_proto__unpack' is never used. [unusedFunction]
+
+^
+src/operators/ai.onnx/Conv/11/operator__ai_onnx__conv__11__T_tensor_float.c:14:0: style: The function 'operator__ai_onnx__conv__11__T_tensor_float' is never used. [unusedFunction]
+
+^
+src/operators/operator_check.c:304:0: style: The function 'operator_check' is never used. [unusedFunction]
+
+^
+src/operators/operator_stub.c:19:0: style: The function 'operator_stub_resolver' is never used. [unusedFunction]
+
+^
+protobuf/protobuf-c.c:3581:0: style: The function 'protobuf_c_enum_descriptor_get_value' is never used. [unusedFunction]
+
+^
+protobuf/protobuf-c.c:3551:0: style: The function 'protobuf_c_enum_descriptor_get_value_by_name' is never used. [unusedFunction]
+
+^
+protobuf/protobuf-c.c:3625:0: style: The function 'protobuf_c_message_descriptor_get_field' is never used. [unusedFunction]
+
+^
+protobuf/protobuf-c.c:3591:0: style: The function 'protobuf_c_message_descriptor_get_field_by_name' is never used. [unusedFunction]
+
+^
+protobuf/protobuf-c.c:3635:0: style: The function 'protobuf_c_service_descriptor_get_method_by_name' is never used. [unusedFunction]
+
+^
+protobuf/protobuf-c.c:3543:0: style: The function 'protobuf_c_service_destroy' is never used. [unusedFunction]
+
+^
+protobuf/protobuf-c.c:3532:0: style: The function 'protobuf_c_service_generated_init' is never used. [unusedFunction]
+
+^
+protobuf/protobuf-c.c:135:0: style: The function 'protobuf_c_version' is never used. [unusedFunction]
+
+^
+protobuf/protobuf-c.c:141:0: style: The function 'protobuf_c_version_number' is never used. [unusedFunction]
+
+^
+src/test/test_utils.c:192:0: style: The function 'test_model' is never used. [unusedFunction]
+
+^
+src/test/test_utils.c:123:0: style: The function 'test_operator' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
